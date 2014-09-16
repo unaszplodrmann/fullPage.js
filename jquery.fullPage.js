@@ -17,7 +17,7 @@
 			'scrollingSpeed': 700,
 			'easing': 'easeInQuart',
 			'menu': false,
-			'navigation': false,
+			//'navigation': false,
 			'navigationPosition': 'right',
 			'navigationColor': '#000',
 			'navigationTooltips': [],
@@ -69,10 +69,10 @@
 			var element = $('.fp-section.active');
 
 			if(options.autoScrolling){
-				$('html, body').css({
+				/*$('html, body').css({
 					'overflow' : 'hidden',
 					'height' : '100%'
-				});
+				});*/
 
 				//for IE touch devices
 				container.css({
@@ -155,7 +155,7 @@
 		var lastScrolledDestiny;
 		var lastScrolledSlide;
 		var nav;
-		var wrapperSelector = 'fullpage-wrapper';
+		//var wrapperSelector = 'fullpage-wrapper';
 
 		$.fn.fullpage.setAllowScrolling(true);
 
@@ -164,20 +164,20 @@
 			options.css3 = support3d();
 		}
 
-		if($(this).length){
+		/*if($(this).length){
 			container.css({
 				'height': '100%',
 				'position': 'relative'
 			});
 
-			//adding a class to recognize the container internally in the code
+			adding a class to recognize the container internally in the code
 			container.addClass(wrapperSelector);
 		}
 
 		//trying to use fullpage without a selector?
 		else{
 			console.error("Error! Fullpage.js needs to be initialized with a selector. For example: $('#myContainer').fullpage();");
-		}
+		}*/
 
 		//adding internal class names to void problem with common ones
 		$(options.sectionSelector).each(function(){
@@ -188,9 +188,9 @@
 		});
 
 		//creating the navigation dots
-		if (options.navigation) {
+		/*if (options.navigation) {
 			addVerticalNavigation();
-		}
+		}*/
 
 		$('.fp-section').each(function(index){
 			var that = $(this);
@@ -345,7 +345,7 @@
 		/**
 		* Creates a vertical navigation bar.
 		*/
-		function addVerticalNavigation(){
+		/*function addVerticalNavigation(){
 			$('body').append('<div id="fp-nav"><ul></ul></div>');
 			nav = $('#fp-nav');
 
@@ -364,7 +364,7 @@
 
 				nav.find('ul').append('<li data-tooltip="' + tooltip + '"><a href="#' + link + '"><span></span></a></li>');
 			}
-		}
+		}*/
 
 		function createSlimScrollingHandler(){
 			$('.fp-section').each(function(){
@@ -761,7 +761,7 @@
 
 			if(options.autoScrolling){
 				scrollOptions['top'] = -dtop;
-				scrolledElement = '.'+wrapperSelector;
+				scrolledElement = '#fullpage';
 			}else{
 				scrollOptions['scrollTop'] = dtop;
 				scrolledElement = 'html, body';
